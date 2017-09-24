@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid title-logo" style="width:1290px; height:120px; margin-top: 52px; background-color: #4183f4;">
+   <h1 style="font-weight: 200; text-align: center; font-family: 'Playfair Display', serif; color:#8db7fc; margin-top: 15px;">Miles Hovey Building Services</h1> 
+   <div class="container" style="width: 50%;">
+   <h2 style="font-weight: 200; text-align: center; font-family: 'Playfair Display', serif; color:#8db7fc; margin-top: 0px; border-top: 1px solid currentColor;">Based in Narberth, Pembrokeshire</h2>
+   </div>
+</div>
+
+<div class="row index-image" style="position: relative;">
+    <img src="{% static 'milesbuilder/index.jpg' %}" alt="">
+    <div style="position: absolute; bottom: 35px; width:100%; background-color: rgba(66, 134, 244, 0.4);" class="well well-sm">
+        <p style="color:white; padding-left: 30px; padding-top: 5px;">Call: 01834 860 052 or get in touch via the <a style="color: #93bcff;" href="{% url 'contact:create' %}">contact page</a></p>
+    </div>
+</div>
+
+<div class="container-fluid below-image" style="display: inline-block; overflow: hidden; position: relative; width:1290px; padding-left:0px; height:800px;">
+
+<img style="pointer-events: none; position:absolute; width: 100%; height: 100%; z-index:-1; opacity: 0.2;" src="{% static 'milesbuilder/below-image.jpg' %}" alt="none">
+
+
+
+<div class="container" style="width:80%; height: 600px; margin-top: 50px;">
+
+    <p style="text-align: center; font-size: 20px; font-weight: 200; border-bottom: 2px solid #93bcff; padding-bottom: 10px;">
+
+        With 30+ years of experience in the building trade I know the key to the job is being open, direct and realistic
+        with my clients. Understanding what you want, setting expectations and keeping all parties informed.
+
+
+    </p>
+
+    <h2 style="text-align: center; font-size: 40px; font-weight: 100; z-index: +3;">Services</h2>
+
+    <div class="row" style="margin-top: 5%;">
+        <div class="col-xs-4">
+            <h2 style="text-align: center; font-weight: 200;">Plastering - <p>including limework</p></h2>
+            <img style="padding-left: 41%;" class="media-object" src="{% static 'milesbuilder/plastering.png' %}" alt="...">
+        </div>
+        <div class="col-xs-4">
+            <h2 style="text-align: center; font-weight: 200;">Stonework</h2>
+            <img style="padding-left: 41%; padding-top: 33px; color: #8db7fc;" class="media-object" src="{% static 'milesbuilder/stonework.png' %}" alt="...">
+        </div>
+        <div class="col-xs-4">
+            <h2 style="text-align:center; font-weight: 200;">Landscaping</h2>
+            <img style="padding-left: 41%; padding-top: 33px;" class="media-object" src="{% static 'milesbuilder/landscaping.png' %}" alt="...">
+        </div>
+    </div>
+    <div class="row" style="margin-top: 15%;">
+        <div class="col-xs-4" style="margin: auto;">
+            <h2 style="text-align:center; font-weight: 200;">Extensions and Alterations</h2>
+            <img style="padding-left: 41%;" class="media-object" src="{% static 'milesbuilder/extensions.png' %}" alt="...">
+        </div>
+        <div class="col-xs-4">
+            <h2 style="text-align:center; font-weight: 200;">Complete Renovations</h2>
+            <img style="padding-left: 41%; padding-top: 33px;" class="media-object" src="{% static 'milesbuilder/renovation.png' %}" alt="...">
+        </div>
+        <div class="col-xs-4">
+            <h2 style="text-align:center; font-weight: 200;">New Build</h2>
+            
+            <img style="padding-left: 41%; padding-top: 33px;" class="media-object" src="{% static 'milesbuilder/house.png' %}" alt="...">
+            
+        </div>
+    </div>
+</div>
+</div>
+
+{% include 'googlemaps.html' %}
+
+{% endblock %}

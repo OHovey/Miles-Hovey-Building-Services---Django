@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% block content %}
+
+
+<div class="container" style="width:80%; margin-top: 70px;">
+    
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-primary" value="Create Post">
+
+        <script>
+        var editor = new MediumEditor('.editable');
+        </script>
+    
+    </form>
+
+
+        <link rel="stylesheet" type="" href="{% static 'medium_text_area/css/medium-editor.css' %}">
+        <script src="static/medium_text_area/js/medium-editor.js"></script>
+
+</div>
+
+{% endblock %}

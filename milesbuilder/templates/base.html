@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <title>Miles Hovey Building Services</title>
+        <meta name="description" content="Plastering, stonework, landscaping, extensions, renovations and new builds.">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'master.css' %}" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+        
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+    </head>
+    <body>
+    
+        
+        <nav class="navbar navbar-default" style="position: fixed; top: 0px; width: 100%; z-index: +1;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                
+            
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a style="padding-top:15px; font-size: 3em; font-family: Times; color: #4183f4;" class="navbar-brand" href="{% url 'home' %}">MH</a>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'blog:all' %}">Blog</a></li>
+                    <li><a href="{% url 'contact:create' %}">Contact</a></li>
+                    <li><a href="{% url 'portfolio:all' %}">Portfolio</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        </nav>
+        
+
+        {% block content %}
+        {% endblock %}
+        
+
+
+    </body>
+</html>

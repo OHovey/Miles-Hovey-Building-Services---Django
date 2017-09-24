@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<body class="post-body" style="background-color: #4183f4;"> 
+
+
+
+<div class="container" style="width: 85%; margin-top:80px;">
+
+    {% if user.is_superuser %}
+
+    <a class="btn btn-default" href="{% url 'blog:create' %}" style="margin-bottom: 20px; margin-right:9%; position: absolute; right: 10px;">New Post</a>
+    
+    {% if post.published is None %}
+
+    <a class="btn btn-default" href="{% url 'blog:drafts' %}">Drafts</a>
+
+    {% endif %}
+
+    {% endif %}
+    
+    {% for post in post_list %}
+
+    <a href="{% url 'blog:detail' pk=post.pk %}">
+        <div class="container-fluid">
+        <h1 style="border-bottom: 1px solid #8db7fc; font-size:30px; font-weight: 100; color:#d3e3ff;">{{ post.title }}</h1>
+
+        <p style="color: #d3e3ff;">{{ post.content|safe|truncatechars:80 }}</p><br>
+
+        {% if user.is_superuser %} 
+        
+        <a class="btn btn-warning" href="{% url 'blog:delete' pk=post.pk %}">Delete</a> 
+
+        {% if post.published is None %}
+            <a class="btn btn-default" href="{% url 'blog:publish' pk=post.pk %}">Publish</a>
+        {% endif %}
+
+        {% endif %}
+        </div>
+    </a>
+
+    {% endfor %}
+
+
+</div>
+
+</body>
+
+{% endblock %}
